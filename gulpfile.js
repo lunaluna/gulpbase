@@ -23,15 +23,13 @@ var paths = {
 	"imgsDir": "dist/images"
 }
 
-gulp.task('connect', connect.server({
-	root: ['dist'],
-	port: 1337,
-	livereload: true,
-	open: {
-		"browser": "Duo" // {} set to blank, open default browser.
-		}
-	})
-);
+gulp.task('connect', function() {
+	connect.server({
+		root: ['dist'],
+		port: 1337,
+		livereload: true
+	});
+});
 
 gulp.task('html', function() {
 	return gulp.src(paths.tplDir)
